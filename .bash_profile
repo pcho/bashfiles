@@ -17,7 +17,7 @@ complete -d cd
 set -o vi
 
 [ -z "$PS1" ] && return
-PS1="\A \H \W \$ "
+PS1="\033[00;34m(\\h)\033[00;00m \\A \\w \$ "
 
 export XDG_DATA_HOME=$HOME/.xdg/
 export LANGUAGE='en_US.UTF-8'
@@ -41,6 +41,7 @@ export PATH=/usr/local/sbin:$PATH
 if [ -f /.dockerenv ]; then
     source $HOME/.dotfiles/.zsh/.alias.zsh
 
+    export PATH=/.gem/bin:$PATH
     export TERM='xterm-256color'
 
     export GOPATH=/.go
