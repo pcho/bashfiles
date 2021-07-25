@@ -41,11 +41,13 @@ export PATH=/usr/local/sbin:$PATH
 if [ -f /.dockerenv ]; then
     source $HOME/.dotfiles/.zsh/.alias.zsh
 
-    export PATH=/.gem/bin:$PATH
     export TERM='xterm-256color'
 
     export GOPATH=/.go
-    export PATH=/.cargo/bin:$PATH
+    export CARGO_HOME=/usr/local/cargo
+
+    export PATH=/.gem/bin:$PATH
+    export PATH=/user/local/cargo/bin:$PATH
 else
     alias mv='mv -v'
     alias rm='rm -i -v'
@@ -62,9 +64,6 @@ else
 
     alias vi='vim'
     alias v='vi'
-
-    export GOPATH=~/.go
-    export PATH=$HOME/.cargo/bin:$PATH
 fi
 
 eval $(dircolors ~/.dircolors)
