@@ -1,2 +1,2 @@
 [ -n "$PS1"  ] &&
-    . ~/.bash_profile
+    . $HOME/.bashfiles/.bash_profile
